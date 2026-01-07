@@ -108,6 +108,10 @@ src/
  │   │   └── services/
  │   ├── features/
  │   │   └── components/
+ │   │   │   ├── gem-form/
+ │   │   │   ├── gem-list-preview/
+ │   │   │   ├── gem-list-collection/
+ │   │   └── gem-main-component/
  │   ├── models/
  │   └── app.config.ts
 ```
