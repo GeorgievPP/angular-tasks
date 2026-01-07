@@ -1,59 +1,112 @@
-# 001GemCollection
+# 001 – Gem Collection (Angular)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.7.
+Small Angular application implementing the Gem Collection task, originally given as a JavaScript DOM problem, reworked and structured as a modern Angular application.
 
-## Development server
+---
 
-To start a local development server, run:
+## 📝 Task Description
 
-```bash
-ng serve
-```
+The application allows managing a gem collection with the following flow:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+1. User fills a form with gem details:
+   - Name
+   - Color
+   - Carats
+   - Price
+   - Type
+2. On submit, the gem is shown in a preview list
+3. From the preview list, the user can:
+   - Edit the gem
+   - Save the gem to the main collection
+   - Cancel the operation
+4. Saved gems are displayed in a collection list
 
-## Code scaffolding
+The original task focuses on direct DOM manipulation.
+This solution focuses on component-driven architecture, state management, and clean separation of concerns in Angular.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## 🧠 Architectural Approach
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+The application follows a container (smart) + presentational components pattern.
 
-```bash
-ng generate --help
-```
+### Container Component
+- GemMainComponent
+- Responsible for:
+  - Managing application state via services
+  - Passing data to child components
+  - Handling user actions (add, edit, move, remove)
 
-## Building
+### Presentational Components
+- GemForm – reactive form for adding and editing gems
+- GemListPreview – displays gems in preview state
+- GemListCollection – displays saved gems
 
-To build the project run:
+All components communicate using inputs, outputs, and signals, without mutating shared state directly.
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🔧 State Management
 
-## Running unit tests
+State is handled via Angular services:
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- GemService
+  - Manages preview gems
+  - Manages collection gems
+  - Tracks currently edited gem
+- FormService
+  - Creates and configures the reactive form
+  - Provides available gem types
 
-```bash
-ng test
-```
+This keeps components focused on UI logic and makes the state predictable and testable.
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 📦 Models
 
-```bash
-ng e2e
-```
+Strong typing is enforced using models and types located in the models folder, including:
+- Gem
+- Supporting type definitions
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 🧩 Angular Features Used
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Standalone components
+- Reactive Forms
+- Dependency Injection
+- Signals and effects
+- Clear separation of concerns
+- Typed models and services
+
+---
+
+## ▶️ Run the Application
+
+From this folder run:
+
+npm install
+npm start
+
+Then open in the browser:
+
+http://localhost:4200
+
+---
+
+## 📁 Project Structure (simplified)
+
+src/
+ ├── app/
+ │   ├── core/
+ │   │   └── services/
+ │   ├── features/
+ │   │   └── components/
+ │   ├── models/
+ │   └── app.config.ts
+
+---
+
+## 📌 Notes
+
+This project is part of the Angular Tasks repository, which contains multiple small Angular applications solving different tasks, each implemented with clean architecture and best practices in mind.
