@@ -1,0 +1,18 @@
+<h1>My Gem Collection</h1>
+<div id="main">
+  <app-gem-form
+    [currGem]="editingGem()"
+    (submitGem)="addGem($event)"
+  ></app-gem-form>
+  <div id="side-wrapper">
+    <app-gem-list-preview
+      [gems]="previewGems()"
+      (saveRequest)="moveGem($event)"
+      (editRequest)="editGem($event)"
+      (cancelRequest)="removeGem($event)"
+    ></app-gem-list-preview>
+    <app-gem-list-collection
+      [gems]="collectionGems()"
+    ></app-gem-list-collection>
+  </div>
+</div>

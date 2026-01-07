@@ -1,0 +1,13 @@
+<div class="side">
+  <h3>Collection</h3>
+  <ul id="collection">
+    @for(gem of gems(); track gem.id) {
+    <li>
+      <p class="collection-item">
+        {{ gem.name }} - Color: {{ gem.color }}/ Carats: {{ gem.carats | number : '1.1-1' }}/ Price:
+        {{ gem.price }}$/ Type {{ gem.type }}
+      </p>
+    </li>
+    }
+  </ul>
+</div>

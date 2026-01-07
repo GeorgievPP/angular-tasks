@@ -1,0 +1,19 @@
+<div class="side">
+  <h3>Preview</h3>
+  <ul id="preview-list">
+    @for(gem of gems(); track gem.id) {
+    <li class="gem-info">
+      <article>
+        <h4>{{ gem.name }}</h4>
+        <p>Color: {{ gem.color }}</p>
+        <p>Carats: {{ gem.carats | number : '1.1-1' }}</p>
+        <p>Price: {{ gem.price }}$</p>
+        <p>Type: {{ gem.type }}</p>
+      </article>
+      <button class="save-btn" (click)="save(gem.id)">Save to Collection</button>
+      <button class="edit-btn" (click)="edit(gem.id)">Edit Information</button>
+      <button class="cancel-btn" (click)="cancel(gem.id)">Cancel</button>
+    </li>
+    }
+  </ul>
+</div>

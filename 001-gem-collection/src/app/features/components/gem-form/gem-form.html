@@ -1,0 +1,23 @@
+<div class="form-wrapper">
+  <h1>
+    Add your new Gem
+    <span>Fill the information about your new precious stone!</span>
+  </h1>
+  <form [formGroup]="formGroup" (ngSubmit)="submit()">
+    <div class="inner-wrap">
+      <input type="text" id="gem-name" formControlName="name" placeholder="Gemstone Name" />
+      <input type="text" id="color" formControlName="color" placeholder="Color" />
+      <input type="number" id="carats" formControlName="carats" placeholder="Carats" />
+      <input type="number" id="price" formControlName="price" placeholder="Price" />
+
+      <select name="field5" id="type" formControlName="type">
+        @for(type of gemType; track type){
+        <option value="{{ type }}">{{ type }}</option>
+        }
+      </select>
+    </div>
+    <div class="button-section">
+      <button type="submit" id="add-btn" [disabled]="formGroup.invalid">Add Gem</button>
+    </div>
+  </form>
+</div>
