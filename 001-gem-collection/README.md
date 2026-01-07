@@ -85,17 +85,23 @@ Strong typing is enforced using models and types located in the models folder, i
 
 From this folder run:
 
+```bash
 npm install
 npm start
+```
 
 Then open in the browser:
 
+```
 http://localhost:4200
+```
+
 
 ---
 
 ## 📁 Project Structure (simplified)
 
+```
 src/
  ├── app/
  │   ├── core/
@@ -104,6 +110,7 @@ src/
  │   │   └── components/
  │   ├── models/
  │   └── app.config.ts
+```
 
 ---
 
