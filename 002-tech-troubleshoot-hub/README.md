@@ -98,15 +98,15 @@ src/
     │       └── problem-form.service.ts
     ├── features/
     │   └── tech-troubleshoot-hub/
-    │       ├── tech-troubleshoot-hub.ts
-    │       ├── tech-troubleshoot-hub.html
-    │       ├── tech-troubleshoot-hub.css
-    │       └── components/
-    │           ├── hub-header/
-    │           ├── problem-form/
-    │           ├── problem-preview-list/
-    │           ├── problem-pending-list/
-    │           └── problem-resolved-list/
+    │   │   ├── tech-troubleshoot-hub.ts
+    │   │   ├── tech-troubleshoot-hub.html
+    │   │   ├── tech-troubleshoot-hub.css
+    │   └── components/
+    │       ├── hub-header/
+    │       ├── problem-form/
+    │       ├── problem-preview-list/
+    │       ├── problem-pending-list/
+    │       └── problem-resolved-list/
     ├── models/
     │   ├── enums/
     │   │   ├── category.enum.ts
