@@ -1,0 +1,13 @@
+<main>
+    <app-order-form
+        [editingOrder]="editingOrder$ | async"
+        (createOrder)="create($event)"
+        (updateOrder)="update($event)"
+    ></app-order-form>
+    <app-order-list
+        [orders]="orders$ | async"
+        (loadRequest)="load()"
+        (deleteRequest)="delete($event)"
+        (editRequest)="startEdit($event)"
+    ></app-order-list>
+</main>

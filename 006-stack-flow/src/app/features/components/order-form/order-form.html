@@ -1,0 +1,22 @@
+<section id="main-container">
+  <div id="form">
+    <h1>Create Order</h1>
+    <form action="#" [formGroup]="formGroup" (ngSubmit)="submit()">
+      <label for="name">Stock Name:</label>
+      <input type="text" id="name" formControlName="name" />
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" formControlName="quantity" />
+
+      <label for="date">Order date:</label>
+      <input type="date" id="date" formControlName="date" />
+
+      <button id="order-btn" type="submit" [disabled]="editingOrder !== null || formGroup.invalid">
+        Order
+      </button>
+      <button id="edit-order" type="submit" [disabled]="editingOrder === null || formGroup.invalid">
+        Edit order
+      </button>
+    </form>
+  </div>
+</section>

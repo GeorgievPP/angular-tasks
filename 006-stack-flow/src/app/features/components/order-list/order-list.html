@@ -1,0 +1,17 @@
+<div id="wrapper">
+  <section id="order-info">
+    <h2>Order List:</h2>
+    <button id="load-orders" (click)="load()">Load All Orders</button>
+    <div id="list">
+      @for(order of orders; track order._id) {
+      <div class="container">
+        <h2>{{ order.name }}</h2>
+        <h3>{{ order.date }}</h3>
+        <h3>{{ order.quantity }}</h3>
+        <button class="change-btn" (click)="edit(order._id)">Change</button>
+        <button class="done-btn" (click)="delete(order._id)">Done</button>
+      </div>
+      }
+    </div>
+  </section>
+</div>
