@@ -1,0 +1,36 @@
+<section id="add-problem">
+  <div class="container">
+    <h1>Problem</h1>
+    <div class="container-text">
+      <form action="" [formGroup]="formGroup" (ngSubmit)="submit()">
+        <label for="employee">Employee:</label>
+        <input type="text" id="employee" formControlName="employee" />
+
+        <label for="category">Category:</label>
+        <select id="category" formControlName="category">
+          @for(cat of categories; track cat) {
+          <option [ngValue]="cat">{{ cat }}</option>
+          }
+        </select>
+
+        <label for="urgency">Urgency:</label>
+        <select id="urgency" formControlName="urgency">
+          @for(urg of urgencies; track urg) {
+          <option [ngValue]="urg">{{ urg }}</option>
+          }
+        </select>
+
+        <label for="team">Assigned Team:</label>
+        <select id="team" formControlName="team">
+          @for(t of teams; track t) {
+          <option [ngValue]="t">{{ t }}</option>
+          }
+        </select>
+
+        <label for="description">Description:</label>
+        <input type="text" id="description" formControlName="description" />
+        <button id="add-btn" type="submit" [disabled]="formGroup.invalid">Add</button>
+      </form>
+    </div>
+  </div>
+</section>

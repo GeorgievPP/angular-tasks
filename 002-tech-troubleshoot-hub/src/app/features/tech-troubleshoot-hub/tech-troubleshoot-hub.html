@@ -1,0 +1,20 @@
+<app-hub-header></app-hub-header>
+<div id="wrapper">
+  <app-problem-form
+    [currProblem]="editingProblem()"
+    (submitProblem)="addOrUpdateProblem($event)"
+  ></app-problem-form>
+  <app-problem-preview-list
+    [problems]="previewProblems()"
+    (editRequest)="startEdit($event)"
+    (continueRequest)="moveToPending($event)"
+  ></app-problem-preview-list>
+  <app-problem-pending-list
+    [problems]="pendingProblems()"
+    (resolveRequest)="moveToResolved($event)"
+  ></app-problem-pending-list>
+  <app-problem-resolved-list
+    [problems]="resolvedProblems()"
+    (clearRequest)="clearFromResolved($event)"
+  ></app-problem-resolved-list>
+</div>

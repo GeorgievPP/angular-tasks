@@ -1,0 +1,21 @@
+<section id="resolved">
+  <div class="resolved-container">
+    <div class="container">
+      <h1>Resolved</h1>
+      <ul class="resolved-list">
+        @for(p of problems(); track p.id) {
+        <li class="problem-content">
+          <article>
+            <p>From: {{ p.employee }}</p>
+            <p>Category: {{ p.category }}</p>
+            <p>Urgency: {{ p.urgency }}</p>
+            <p>Assigned to: {{ p.team }}</p>
+            <p>Description: {{ p.description }}</p>
+          </article>
+          <button class="clear-btn" (click)="clear(p.id)">Clear</button>
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>

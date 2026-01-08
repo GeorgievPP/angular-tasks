@@ -1,0 +1,22 @@
+<section id="preview">
+  <div class="preview-container">
+    <div class="container">
+      <h1>Preview</h1>
+      <ul class="preview-list">
+        @for(p of problems(); track p.id) {
+        <li class="problem-content">
+          <article>
+            <p>From: {{ p.employee }}</p>
+            <p>Category: {{ p.category }}</p>
+            <p>Urgency: {{ p.urgency }}</p>
+            <p>Assigned to: {{ p.team }}</p>
+            <p>Description: {{ p.description }}</p>
+          </article>
+          <button class="edit-btn" (click)="edit(p.id)">Edit</button>
+          <button class="continue-btn" (click)="continue(p.id)">Continue</button>
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>
