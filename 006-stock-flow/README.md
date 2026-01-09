@@ -77,6 +77,11 @@ Responsible for:
 
 ## ▶️ Run the Application
 
+⚠️ **Important:**  
+The backend server is currently **commented out / disabled** for safety and easier local setup.
+
+Before running the application, make sure to **uncomment and start the server**.
+
 ### 1. Start JSON Server
 
 ```bash
