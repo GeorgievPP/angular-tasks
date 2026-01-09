@@ -7,13 +7,13 @@ import { OrderList } from '../components/order-list/order-list';
 import { AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-stack-flow',
+  selector: 'app-stock-flow',
   imports: [OrderForm, OrderList, AsyncPipe],
-  templateUrl: './stack-flow.html',
-  styleUrl: './stack-flow.css',
+  templateUrl: './stock-flow.html',
+  styleUrl: './stock-flow.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class StackFlow {
+export class StockFlow {
   private readonly orderService = inject(OrderStoreService);
 
   readonly orders$: Observable<Order[]> = this.orderService.orders$;

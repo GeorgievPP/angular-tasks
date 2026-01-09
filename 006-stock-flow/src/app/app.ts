@@ -1,12 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { StackFlow } from './features/stack-flow/stack-flow';
+
+import { StockFlow } from './features/stock-flow/stock-flow';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, StackFlow],
+  imports: [RouterOutlet, StockFlow],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
-export class App {
-}
+export class App {}
