@@ -28,7 +28,7 @@ The goals of this repository are:
 |-----|-------------|
 | **001 – Gem Collection** | CRUD-style UI with reactive forms, preview state, and collection management |
 | **002 – Tech Troubleshoot Hub** | Issue tracking workflow with reactive forms, signals, and centralized state |
-| **006 – Stack Flow** | CRUD application with backend communication, API/store separation, and reactive state |
+| **006 – Stack Flow** | CRUD application with backend communication, API/store separation, and RxJS-based state management |
 
 
 More tasks will be added progressively.
