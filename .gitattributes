@@ -1,0 +1,7 @@
+# Do not count mock servers towards language stats
+**/server/** linguist-vendored
+**/mock-server/** linguist-vendored
+**/json-server/** linguist-vendored
+
+# Optional: if you keep large data files
+**/*.json linguist-vendored
