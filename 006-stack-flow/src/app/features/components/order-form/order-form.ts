@@ -1,4 +1,12 @@
-import { Component, EventEmitter, inject, Input, Output, SimpleChanges } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  inject,
+  Input,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import { FormService } from '../../../core/services/order-form.service';
@@ -10,6 +18,7 @@ import { NewOrder, Order } from '../../../models';
   imports: [ReactiveFormsModule],
   templateUrl: './order-form.html',
   styleUrl: './order-form.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OrderForm {
   private readonly formService: FormService = inject(FormService);

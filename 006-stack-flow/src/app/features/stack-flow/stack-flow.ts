@@ -1,5 +1,5 @@
-import { Component, inject } from '@angular/core';
-import { OrderService } from '../../core/services/order-store.service';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { OrderStoreService } from '../../core/services/order-store.service';
 import { Observable } from 'rxjs';
 import { NewOrder, Order } from '../../models';
 import { OrderForm } from '../components/order-form/order-form';
@@ -11,9 +11,10 @@ import { AsyncPipe } from '@angular/common';
   imports: [OrderForm, OrderList, AsyncPipe],
   templateUrl: './stack-flow.html',
   styleUrl: './stack-flow.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StackFlow {
-  private readonly orderService = inject(OrderService);
+  private readonly orderService = inject(OrderStoreService);
 
   readonly orders$: Observable<Order[]> = this.orderService.orders$;
   readonly editingOrder$: Observable<Order | null> = this.orderService.editingOrder$;

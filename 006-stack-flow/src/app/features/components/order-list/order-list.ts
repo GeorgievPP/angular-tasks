@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { Order } from '../../../models';
 
@@ -7,6 +7,7 @@ import { Order } from '../../../models';
   imports: [],
   templateUrl: './order-list.html',
   styleUrl: './order-list.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OrderList {
   private _orders: Order[] = [];
