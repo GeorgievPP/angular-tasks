@@ -1,0 +1,25 @@
+<main>
+  @if (loading()) {
+    <section>Loading workouts...</section>
+  }
+  @if (error()) {
+    <section>{{ error() }}</section>
+  }
+
+  <section id="main-container">
+    <app-workout-form
+      [currWorkout]="singleWorkout()"
+      (createRequest)="create($event)"
+      (updateRequest)="update($event)"
+      (cancelRequest)="cancel()"
+    ></app-workout-form>
+  </section>
+  <div id="wrapper">
+    <app-workout-list
+      [workouts]="workouts()"
+      (loadRequest)="load()"
+      (startUpdateRequest)="startUpdate($event)"
+      (deleteRequest)="delete($event)"
+    ></app-workout-list>
+  </div>
+</main>

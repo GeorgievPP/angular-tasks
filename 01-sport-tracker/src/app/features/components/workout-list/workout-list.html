@@ -1,0 +1,17 @@
+<section id="history">
+  <h2>Ended Workout:</h2>
+  <button id="load-workout" (click)="load()">Load Workout</button>
+  <div id="list">
+    @for (item of workouts(); track item._id) {
+    <div class="container">
+      <h2>{{ item.workout }}</h2>
+      <h3>{{ item.date }}</h3>
+      <h3 id="location">{{ item.location }}</h3>
+      <div id="buttons-container">
+        <button class="change-btn" (click)="startUpdate(item._id)">Change</button>
+        <button class="delete-btn" (click)="del(item._id)">Done</button>
+      </div>
+    </div>
+  }
+  </div>
+</section>

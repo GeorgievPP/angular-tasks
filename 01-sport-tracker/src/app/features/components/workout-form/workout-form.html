@@ -1,0 +1,35 @@
+<div id="form">
+  <h1>Enter the next workout</h1>
+  <form action="#" [formGroup]="formGroup" (ngSubmit)="submit()">
+    <label for="workout">Workout:</label>
+    <input type="text" id="workout" formControlName="workout" />
+    <label for="location">Location:</label>
+    <input type="text" id="location" formControlName="location" />
+    <label for="date">Date:</label>
+    <input type="date" id="date" formControlName="date" />
+    <div id="btn-container">
+      <button
+        id="add-workout"
+        type="submit"
+        [disabled]="currWorkout() !== null || formGroup.invalid"
+      >
+        Add Workout
+      </button>
+      <button
+        id="edit-workout"
+        type="submit"
+        [disabled]="currWorkout() === null || formGroup.invalid"
+      >
+        Edit Workout
+      </button>
+      <button
+        id="cancel-workout"
+        type="button"
+        [disabled]="currWorkout() === null"
+        (click)="cancel()"
+      >
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>
